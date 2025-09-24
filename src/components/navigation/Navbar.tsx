@@ -4,7 +4,7 @@ import NavItem from "./NavItem";
 export default function Navbar() {
   return (
     <nav>
-      <ul>
+      <ul className="flex gap-2">
         {navItems.map((item) => (
           <NavItem key={item.href} {...item} />
         ))}
