@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "../components/navigation/Header";
+import { ReactQueryProvider } from "../providers";
 
 export default function RootLayout({
   children,
@@ -9,8 +10,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <Header />
-        {children}
+        <ReactQueryProvider>
+          <Header />
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );
