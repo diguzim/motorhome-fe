@@ -1,29 +1,20 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header: React.FC = () => (
-  <header
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "1rem 2rem",
-      borderBottom: "1px solid #eee",
-    }}
-  >
-    <div>
-      <Link
-        href="/"
-        style={{
-          fontWeight: "bold",
-          fontSize: "1.5rem",
-          textDecoration: "none",
-        }}
-      >
-        Motorhome
-      </Link>
-    </div>
+  <header className="flex items-center justify-between px-8 py-4 border-b border-gray-200">
+    <Link href="/" className="inline-block" aria-label="Ir para página inicial">
+      <Image
+        src="/logo.png"
+        alt="Logo Motorhome"
+        width={140}
+        height={112}
+        className="h-14 w-auto"
+        priority
+      />
+    </Link>
     <Navbar />
   </header>
 );
