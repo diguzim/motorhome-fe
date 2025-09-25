@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { MarkdownPreview } from "@/components/ui/markdown-content";
 import type { Trabalho } from "@/domain/trabalho";
 
 interface TrabalhoCardProps {
@@ -30,9 +31,11 @@ export function TrabalhoCard({ trabalho, index }: TrabalhoCardProps) {
       </CardHeader>
 
       <CardContent>
-        <div className="prose prose-gray max-w-none">
-          <p className="text-gray-700 leading-relaxed">{trabalho.descricao}</p>
-        </div>
+        <MarkdownPreview
+          content={trabalho.descricao}
+          maxLength={400}
+          className="text-gray-700"
+        />
       </CardContent>
 
       <CardFooter className="border-t border-gray-200">
