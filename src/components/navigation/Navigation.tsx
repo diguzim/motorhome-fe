@@ -69,7 +69,7 @@ const Navigation: React.FC = () => {
       <div className="lg:hidden">
         <button
           onClick={toggleMobileMenu}
-          className="h-12 w-12 p-0 flex items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+          className="h-12 w-12 p-0 flex items-center justify-center rounded-md text-white hover:bg-white/10 hover:text-white transition-colors"
           aria-label="Toggle navigation menu"
         >
           {isMobileMenuOpen ? (
