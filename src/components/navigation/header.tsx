@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "./Navigation";
+import Navigation from "./navigation";
 import Link from "next/link";
 import Image from "next/image";
 

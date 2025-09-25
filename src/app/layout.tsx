@@ -1,5 +1,5 @@
 import "./globals.css";
-import Header from "../components/navigation/Header";
+import Header from "../components/navigation/header";
 import { ReactQueryProvider } from "../providers";
 
 export default function RootLayout({
