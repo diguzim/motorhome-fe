@@ -14,9 +14,9 @@ const Header: React.FC = () => (
         <Image
           src="/logo.png"
           alt="Logo Motorhome"
-          width={140}
-          height={112}
-          className="h-14 w-auto"
+          width={156}
+          height={124}
+          className="w-24 h-auto"
           priority
         />
       </Link>
