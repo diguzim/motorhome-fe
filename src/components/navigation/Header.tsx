@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -22,7 +22,7 @@ const Header: React.FC = () => (
       </Link>
       <h1>Fábrica de Motorhomes</h1>
     </div>
-    <Navbar />
+    <Navigation />
   </header>
 );
 
