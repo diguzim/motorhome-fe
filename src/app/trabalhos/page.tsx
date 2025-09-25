@@ -2,6 +2,7 @@
 
 import { useTrabalhos } from "../../hooks";
 import { TrabalhoCard } from "../../components/trabalho-card";
+import type { Trabalho } from "@/domain/trabalho";
 
 export default function TrabalhosPage() {
   const { data, isLoading, error } = useTrabalhos();
@@ -52,7 +53,7 @@ export default function TrabalhosPage() {
 
         {data && data.length > 0 ? (
           <div className="grid gap-8 md:gap-12">
-            {data.map((trabalho: any, index: number) => (
+            {data.map((trabalho: Trabalho, index: number) => (
               <TrabalhoCard
                 key={trabalho.id}
                 trabalho={trabalho}

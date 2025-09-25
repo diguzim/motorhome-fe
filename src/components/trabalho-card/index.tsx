@@ -5,13 +5,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import type { Trabalho } from "@/domain/trabalho";
 
 interface TrabalhoCardProps {
-  trabalho: {
-    id: string | number;
-    titulo: string;
-    descricao: string;
-  };
+  trabalho: Trabalho;
   index: number;
 }
 
