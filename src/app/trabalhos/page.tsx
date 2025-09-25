@@ -4,7 +4,6 @@ import { useTrabalhos } from "../../hooks";
 
 export default function TrabalhosPage() {
   const { data, isLoading, error } = useTrabalhos();
-  console.log("data", data);
 
   if (isLoading) return <p>Carregando...</p>;
   if (error) return <p>Erro ao carregar</p>;
