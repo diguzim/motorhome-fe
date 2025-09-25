@@ -52,8 +52,10 @@ const Navigation: React.FC = () => {
                   <NavigationMenuLink
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      pathname === item.href &&
-                        "bg-accent text-accent-foreground"
+                      "bg-transparent text-white hover:bg-transparent focus:bg-transparent",
+                      pathname === item.href
+                        ? "text-green-500 hover:text-green-500 focus:text-green-500"
+                        : "hover:text-green-500 focus:text-green-500"
                     )}
                   >
                     {item.label}
