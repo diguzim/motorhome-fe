@@ -67,19 +67,17 @@ const Navigation: React.FC = () => {
 
       {/* Mobile Hamburger Button - Visible on sm and md, hidden on lg+ */}
       <div className="lg:hidden">
-        <Button
-          variant="ghost"
-          size="icon"
+        <button
           onClick={toggleMobileMenu}
-          className="h-9 w-9"
+          className="h-12 w-12 p-0 flex items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
           aria-label="Toggle navigation menu"
         >
           {isMobileMenuOpen ? (
-            <X className="h-5 w-5" />
+            <X className="h-6 w-6" />
           ) : (
-            <Menu className="h-5 w-5" />
+            <Menu className="h-6 w-6" />
           )}
-        </Button>
+        </button>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -90,7 +88,7 @@ const Navigation: React.FC = () => {
         >
           {/* Menu content */}
           <nav
-            className="bg-background rounded-lg shadow-lg p-8 m-4 w-full max-w-sm"
+            className="bg-background rounded-lg shadow-lg m-4 w-full max-w-sm"
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col w-full divide-y divide-border">

@@ -20,7 +20,7 @@ const Header: React.FC = () => (
           priority
         />
       </Link>
-      <h1>Fábrica de Motorhomes</h1>
+      <p className="hidden md:block">Fábrica de Motorhomes</p>
     </div>
     <Navigation />
   </header>
