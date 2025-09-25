@@ -11,7 +11,6 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
 import { navItems } from "./navItems";
 import { cn } from "@/lib/utils";
 
@@ -53,10 +52,10 @@ const Navigation: React.FC = () => {
                     href={item.href}
                     className={cn(
                       navigationMenuTriggerStyle(),
-                      "bg-transparent text-white hover:bg-transparent focus:bg-transparent",
+                      "bg-transparent text-white hover:bg-transparent focus:bg-transparent font-medium text-base tracking-wide transition-all duration-300",
                       pathname === item.href
-                        ? "text-green-500 hover:text-green-500 focus:text-green-500"
-                        : "hover:text-green-500 focus:text-green-500"
+                        ? "text-green-400 hover:text-green-400 focus:text-green-400 font-semibold"
+                        : "hover:text-green-400 focus:text-green-400 hover:font-semibold"
                     )}
                   >
                     {item.label}
@@ -100,10 +99,10 @@ const Navigation: React.FC = () => {
                   <Link
                     href={item.href}
                     className={cn(
-                      "block w-full text-center py-4 px-6 text-lg font-medium transition-colors rounded-md",
+                      "block w-full text-center py-5 px-6 text-xl font-semibold tracking-wide transition-all duration-300 rounded-md",
                       pathname === item.href
-                        ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                        ? "bg-green-500 text-white font-bold"
+                        : "text-gray-700 hover:text-green-600 hover:bg-green-50 hover:font-bold"
                     )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const Header: React.FC = () => (
   <header className="flex items-center justify-between px-8 py-4 bg-black text-white">
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-6">
       <Link
         href="/"
-        className="inline-block"
+        className="inline-block transition-transform hover:scale-105 duration-300"
         aria-label="Ir para página inicial"
       >
         <Image
@@ -20,7 +20,14 @@ const Header: React.FC = () => (
           priority
         />
       </Link>
-      <p className="hidden md:block text-white">Fábrica de Motorhomes</p>
+      <div className="hidden md:block">
+        <p className="text-white font-medium text-lg tracking-wide">
+          Fábrica de Motorhomes
+        </p>
+        <p className="text-gray-400 text-sm font-normal tracking-wider uppercase">
+          Sua casa sobre rodas
+        </p>
+      </div>
     </div>
     <Navigation />
   </header>
