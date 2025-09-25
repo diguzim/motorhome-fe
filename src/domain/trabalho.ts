@@ -1,16 +1,19 @@
 import { z } from "zod";
+import { imageSchema, type Image } from "./image";
 
 /**
  * Zod schema for validating Trabalho data from API responses
  */
 export const trabalhoSchema = z.object({
-  id: z.union([z.string(), z.number()]).transform(String),
+  id: z.number(),
+  documentId: z.string(),
   titulo: z.string().min(1, "Título é obrigatório"),
   descricao: z.string().min(1, "Descrição é obrigatória"),
-  // Add other fields that might come from the API
-  createdAt: z.string().optional(),
-  updatedAt: z.string().optional(),
-  publishedAt: z.string().optional(),
+  slug: z.string().min(1, "Slug é obrigatório"),
+  createdAt: z.string().datetime(),
+  updatedAt: z.string().datetime(),
+  publishedAt: z.string().datetime(),
+  imagens: z.array(imageSchema).default([]),
 });
 
 /**

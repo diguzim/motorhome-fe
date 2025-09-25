@@ -55,7 +55,7 @@ export default function TrabalhosPage() {
           <div className="grid gap-8 md:gap-12">
             {data.map((trabalho: Trabalho, index: number) => (
               <TrabalhoCard
-                key={trabalho.id}
+                key={trabalho.slug}
                 trabalho={trabalho}
                 index={index}
               />
