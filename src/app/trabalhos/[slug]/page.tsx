@@ -1,20 +1,22 @@
 "use client";
 
+import { use } from "react";
 import { useTrabalho } from "../../../hooks";
 import { MarkdownContent } from "../../../components/ui/markdown-content";
 import { ResponsiveImageCard } from "../../../components/ui/responsive-image";
 import type { Trabalho } from "@/domain/trabalho";
 
 interface TrabalhoDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default function TrabalhoDetailPage({
   params,
 }: TrabalhoDetailPageProps) {
-  const { data: trabalho, isLoading, error } = useTrabalho(params.slug);
+  const { slug } = use(params);
+  const { data: trabalho, isLoading, error } = useTrabalho(slug);
 
   if (isLoading) {
     return (
