@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "../components/navigation/header";
+import Footer from "../components/footer";
 import { ReactQueryProvider } from "../providers";
 
 export default function RootLayout({
@@ -12,7 +13,8 @@ export default function RootLayout({
       <body>
         <ReactQueryProvider>
           <Header />
-          {children}
+          <main className="min-h-screen">{children}</main>
+          <Footer />
         </ReactQueryProvider>
       </body>
     </html>
