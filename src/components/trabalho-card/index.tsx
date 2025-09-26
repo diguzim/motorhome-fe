@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { MarkdownPreview } from "@/components/ui/markdown-content";
+import { ResponsiveImageCard } from "@/components/ui/responsive-image";
 import type { Trabalho } from "@/domain/trabalho";
 
 interface TrabalhoCardProps {
@@ -30,7 +31,16 @@ export function TrabalhoCard({ trabalho, index }: TrabalhoCardProps) {
         </div>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="space-y-4">
+        {/* Image */}
+        <ResponsiveImageCard
+          image={trabalho.imagens[0]}
+          alt={trabalho.titulo}
+          className="w-full"
+          priority={index < 2} // Prioritize loading for first 2 images
+        />
+
+        {/* Description */}
         <MarkdownPreview
           content={trabalho.descricao}
           maxLength={400}
