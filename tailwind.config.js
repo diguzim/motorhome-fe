@@ -7,7 +7,19 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
+            maxWidth: "none",
+          },
+        },
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
