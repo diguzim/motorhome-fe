@@ -3,7 +3,7 @@
 import { use } from "react";
 import { useTrabalho } from "../../../hooks";
 import { MarkdownContent } from "../../../components/ui/markdown-content";
-import { ResponsiveImageCard } from "../../../components/ui/responsive-image";
+import { ResponsiveImageCarousel } from "../../../components/ui/responsive-image-carousel";
 import type { Trabalho } from "@/domain/trabalho";
 
 interface TrabalhoDetailPageProps {
@@ -86,17 +86,16 @@ export default function TrabalhoDetailPage({
 
         {/* Content */}
         <div className="space-y-8">
-          {/* Image */}
-          {trabalho.imagens && trabalho.imagens.length > 0 && (
-            <div className="w-full">
-              <ResponsiveImageCard
-                image={trabalho.imagens[0]}
-                alt={trabalho.titulo}
-                className="w-full"
-                priority={true}
-              />
-            </div>
-          )}
+          {/* Image Carousel */}
+          <div className="w-full">
+            <ResponsiveImageCarousel
+              images={trabalho.imagens}
+              alt={trabalho.titulo}
+              className="w-full"
+              aspectRatio="video"
+              priority={true}
+            />
+          </div>
 
           {/* Description */}
           <div className="prose prose-lg prose-gray max-w-none">
