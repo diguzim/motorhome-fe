@@ -42,8 +42,6 @@ export function MarkdownContent({
         )
         // Line breaks (convert double newlines to paragraphs)
         .replace(/\n\n/g, "</p><p>")
-        // Single line breaks
-        .replace(/\n/g, "<br>")
         // Wrap in paragraph tags if not already wrapped
         .replace(/^(?!<[h|u|o])/gm, "<p>")
         .replace(/(?<!>)$/gm, "</p>")
