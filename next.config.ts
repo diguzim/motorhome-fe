@@ -16,14 +16,22 @@ const nextConfig: NextConfig = {
         port: "1337",
         pathname: "/uploads/**",
       },
-      // Add more patterns for production domains when needed
-      // Example for production:
-      // {
-      //   protocol: 'https',
-      //   hostname: 'your-api-domain.com',
-      //   pathname: '/uploads/**',
-      // },
+      // Production - Strapi on Render
+      {
+        protocol: "https",
+        hostname: "motorhome-be.onrender.com",
+        pathname: "/uploads/**",
+      },
     ],
+  },
+  // API Proxy to avoid CORS issues
+  async rewrites() {
+    return [
+      {
+        source: "/api/proxy/:path*",
+        destination: "https://motorhome-be.onrender.com/api/:path*",
+      },
+    ];
   },
 };
 
