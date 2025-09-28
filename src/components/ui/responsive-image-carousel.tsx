@@ -2,8 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { useResponsiveImage, useScreenSize } from "@/hooks/useResponsiveImage";
-import { getFullImageUrl } from "@/lib/image-utils";
+import { useResponsiveImage } from "@/hooks/useResponsiveImage";
 import type { Image as ImageType } from "@/domain/image";
 import {
   Carousel,
@@ -32,8 +31,6 @@ export function ResponsiveImageCarousel({
   aspectRatio = "video",
   priority = false,
 }: ResponsiveImageCarouselProps) {
-  const screenSize = useScreenSize();
-
   const aspectRatioClasses = {
     square: "aspect-square",
     video: "aspect-video",
@@ -54,7 +51,6 @@ export function ResponsiveImageCarousel({
           alt={alt}
           aspectRatio={aspectRatio}
           priority={priority}
-          screenSize={screenSize}
         />
       </div>
     );
@@ -96,7 +92,6 @@ export function ResponsiveImageCarousel({
                 alt={`${alt} - Imagem ${index + 1}`}
                 aspectRatio={aspectRatio}
                 priority={priority && index === 0}
-                screenSize={screenSize}
               />
             </CarouselItem>
           ))}
@@ -122,13 +117,11 @@ function CarouselImageItem({
   alt,
   aspectRatio,
   priority,
-  screenSize,
 }: {
   image: ImageType;
   alt: string;
   aspectRatio: "square" | "video" | "wide" | "auto";
   priority: boolean;
-  screenSize: "mobile" | "tablet" | "desktop";
 }) {
   const { imageUrl, isLoading } = useResponsiveImage(image);
 

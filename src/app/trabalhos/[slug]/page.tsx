@@ -4,7 +4,6 @@ import { use } from "react";
 import { useTrabalho } from "../../../hooks";
 import { MarkdownContent } from "../../../components/ui/markdown-content";
 import { ResponsiveImageCarousel } from "../../../components/ui/responsive-image-carousel";
-import type { Trabalho } from "@/domain/trabalho";
 
 interface TrabalhoDetailPageProps {
   params: Promise<{

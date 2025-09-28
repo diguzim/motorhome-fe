@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { imageSchema, type Image } from "./image";
+import { imageSchema } from "./image";
 
 /**
  * Zod schema for validating Trabalho data from API responses
