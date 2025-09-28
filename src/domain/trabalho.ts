@@ -13,7 +13,11 @@ export const trabalhoSchema = z.object({
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
   publishedAt: z.string().datetime(),
-  imagens: z.array(imageSchema).default([]),
+  imagens: z
+    .array(imageSchema)
+    .nullable()
+    .default([])
+    .transform((val) => val ?? []),
 });
 
 /**

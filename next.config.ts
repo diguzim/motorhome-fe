@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         hostname: "motorhome-be.onrender.com",
         pathname: "/uploads/**",
       },
+      // Cloudinary CDN for images
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
     ],
   },
   // API Proxy to avoid CORS issues
